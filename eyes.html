@@ -14,61 +14,79 @@
              <style>
      	        
         table {
-            width: 100% !important;
-            border-collapse: collapse !important;
-            margin-bottom: 20px !important;
-        }
+    width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+    margin-bottom: 20px !important;
+}
 
-        th, td {
-            border: 1px solid #dddddd !important;
-            text-align: left !important;
-            padding: 8px !important;
-        }
+th, td {
+    border: 1px solid #dddddd !important;
+    text-align: left !important;
+    padding: 8px !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    vertical-align: top !important;
+}
 
-        th {
-            background-color:orange !important;
-            color: white !important;
-                text-align: center !important;
-        }
+th {
+    background-color: orange !important;
+    color: white !important;
+    text-align: center !important;
+}
 
-        /* Add background color to alternate rows */
-        tbody tr:nth-child(even) {
-            background-color: #f2f2f2 !important;
-        }
+/* Column widths - making center column larger */
+td:nth-child(1), th:nth-child(1) {
+    width: 20%;  /* First column - Disease name */
+}
 
-       
+td:nth-child(2), th:nth-child(2) {
+    width: 65%;  /* Center column - Genes (LARGER) */
+}
 
-        /* Responsive design for small screens */
-        @media screen and (max-width: 600px) {
-            table, thead, tbody, th, td, tr {
-                display: block;
-            }
+td:nth-child(3), th:nth-child(3) {
+    width: 15%;  /* Third column - Method */
+}
 
-         th {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
-            }
+/* Add background color to alternate rows */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2 !important;
+}
 
-            tr {
-                margin-bottom: 15px;
-            }
+/* Responsive design for small screens */
+@media screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
 
-            td {
-                border: none;
-                position: relative;
-                padding-left: 50%;
-            }
+    th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
 
-            td:before {
-                position: absolute;
-                top: 6px;
-                left: 6px;
-                width: 45%;
-                padding-right: 10px;
-                white-space: nowrap;
-            }
-        }
+    tr {
+        margin-bottom: 15px;
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        width: 100% !important;
+    }
+
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+}
         
  
            </style>
@@ -643,6 +661,7 @@
 
 	</body>
 </html>
+
 
 
 
