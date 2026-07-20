@@ -15,259 +15,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-yCm2s/z9PzMyuqGmyvN6i3e0N1xAcLgpcN4A1lqj5yI99T1e8T1IaR8MpD6vC+a" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <style>
-    body {
-        color: black; 
-    }
-    body {
-    background-color: white; 
-}
-#footer,
-#footer h3,
-#footer a,
-#footer span,
-#footer .icons a {
-    color: black !important;
-}
-
-#footer .menu li {
-    color: black !important;
-}
-
-#footer .icons a {
-    color: black !important;
-}
-
-#footer .menu li:first-child {
-    color: black !important;
-}
-
-#sidebar,
-#footer {
-  
-    background-color:#FFDAB9 !important;
-    color: blue !important;
-}
-#sidebar a {
-    color: blue !important; 
-}
-
-#sidebar,
-#footer {
-    background-color: #FFDAB9 !important;
-    color: black !important;
-}
-
-#footer {
-    color: black !important;
-}
-
-#footer a {
-    color: black !important;
-}
-#intro,
-#one,
-#two,
-#three,
-#four,
-#five,
-#report{
-      color : white !important;
-    background-color: #fff0 !important; /* Set the background color for these sections (replace #fff0 with your desired color) */
-}
-/* For the "See more" button in the intro section */
-#intro .actions .button {
-    color: black !important; /* Set the text color to black */
-    border: 2px solid black !important; /* Set the border to black */
-}
-
-/* For the "Click to see more" button in the content sections */
-.wrapper.style2 .content .button {
-    color: black !important; /* Set the text color to black */
-    border: 2px solid black !important; /* Set the border to black */
-}
-
-/* Hover effect for better visibility */
-.wrapper.style2 .content .button:hover {
-    background: black !important; /* Change the background color on hover */
-    color: black !important; /* Change the text color on hover */
-}
-    p {
-    color: black !important;
-}
-
-    #intro h1 {
-        color: black; /* Set heading text color to black in the intro section */
-    }
-    #sidebar a {
-    color: black !important;
-    }
-
-    .button 
-    {
-    color: black !important; /* Set button text color to black */
-    }
-    h2 {
-    color: black !important; /* Set H2 text color to black */
-    }
-    h3 {
-    color: black !important; /* Set H2 text color to black */
-    }
-
-    /* Add more specific styles as needed */
-    </style>
-    <style>
-    #intro {
-        position: relative;
-        border: 1px solid #ccc; /* Add a border to the #intro section */
-        padding: 1em; /* Add padding to create space for the logo */
-    }
-
-    #intro .inner {
-        margin-top: 2em;
-        position: relative; /* Add relative positioning to establish a new positioning context */
-    }
-
-    #intro .image.logo {
-        position: absolute;
-        top: 0em;
-        right: 0em;	
-        z-index: 1; /* Ensure the logo appears above other elements */
-    }
-    #intro .image.logo1 
-    {
-    position: absolute;
-    top: 0em;
-    left: 0em;
-    z-index: 1;
-    }
-    #five .fields label {
-    color: black !important;
-}
-#five .contact li {
-    color: black !important;
-}
-#five .fields:hover {
-    background: white !important; /* Change the background color on hover */
-    color: black !important; /* Change the text color on hover */
-}
-
-/* Hover effect for better visibility in contact information */
-#five .contact li:hover {
-    background: white !important; /* Change the background color on hover */
-    color: black !important; /* Change the text color on hover */
-}
-#five .button.submit {
-    border: 2px solid black !important;
-}
-#five .fields input,
-#five .fields textarea {
-    border: 2px solid black !important;
-}
-input:focus,
-textarea:focus {
-    outline: none;
-}
-.button:focus {
-    outline: none !important;
-}
-/* Disable focus outline for buttons */
-.button:focus,
-.button:active {
-    outline: none !important;
-    border: 2px solid black !important;
-}
-.wrapper.style2 .content .button,
-.wrapper.style2 .content .button:hover,
-.wrapper.style2 .content .button:focus {
-    color: black !important; /* Set the text color to black */
-    border: 2px solid black !important; /* Set the border to black */
-    background: transparent !important; /* Set the background to transparent */
-}
-#five {
-    border-bottom: 2px solid black; /* Add a black border at the bottom of the "Get in Touch" section */
-}
-
-#five {
-    border-top: 2px solid black; /* Add a black border at the top of the "Brochure" section */
-}
-/* Style for the brochure list */
-.brochure-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.brochure-list li {
-    margin-bottom: 10px;
-}
-
-.brochure-list a {
-    color: black;
-    text-decoration: none;
-}
-
-.brochure-list a:hover {
-    text-decoration: underline;
-}
-/* Style for the brochure list */
-.brochure-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.brochure-list li {
-    margin-bottom: 10px;
-}
-
-.brochure-list a {
-    display: inline-block;
-    padding: 10px;
-    color: black;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.brochure-list a:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: black;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease;
-}
-
-.brochure-list a:hover {
-    color: #ff8800; /* Change the text color on hover */
-}
-
-.brochure-list a:hover:before {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-#intro:hover {
-    background-color: #your_desired_color !important; /* Change #your_desired_color to the color you want on hover */
-    color: black !important; /* Set text color to black on hover */
-}
-
-#intro:hover a {
-    color: black !important; 
-text-decoration: underline;
-}
-#intro h1 {
-    color: orange !important; /* Set heading text color to orange in the intro section */
-}
- #sidebar ul li.active {
-            background-color: #007BFF;
-            color: white;
-        }
-  </style>
+    <link rel="stylesheet" href="assets/css/home.css" />
  <script>
         // jQuery script to handle sidebar item selection
         $(document).ready(function () {
@@ -287,47 +35,6 @@ text-decoration: underline;
 <body class="is-preload">
 
 <!-- Sidebar -->
-<style>
-#sidebar ul li a {
-    display: block;
-    padding: 15px;
-    color: #004080 !important; /* Dark blue color */
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-    border: 2px solid #004080; /* Dark blue border */
-    border-radius: 5px; /* Optional: Add border-radius for rounded corners */
-}
-
-#sidebar ul li a:hover {
-    background-color: #004080; /* Dark blue background on hover */
-    color: white !important;
-}
-#sidebar ul li a {
-    font-family: 'Lato', sans-serif;
-    font-weight: bold !important;
-}
-/* Add this style to your existing CSS */
-#intro .actions .button:hover{
-    background-color: #004080; /* Dark blue background on hover */
-    color: white !important;
-}
-#one .actions .button:hover,
-#two .actions .button:hover,
-#three .actions .button:hover,
-#four .actions .button:hover,
-#five .actions .button:hover {
-    background-color: #004080; /* Dark blue background on hover */
-    color: blue !important;
-}
-#wrapper {
-    z-index: 1;
-}
-#wrapper {
-    z-index: 1;
-}
-
-
-</style>
 <section id="sidebar">
     <div class="inner">
         <nav>
@@ -362,9 +69,9 @@ text-decoration: underline;
     <!-- One -->
     <section id="one" class="wrapper style2 spotlights">
         <section>
-           
-            <img src="images/germ.png" alt="" data-position="center center" width="635" height="903" />
-       
+
+            <span class="image"><img src="images/germ.png" alt="" data-position="center center" width="635" height="903" /></span>
+
             <div class="content">
                 <div class="inner">
                     <h2>Germline gene panel</h2>
@@ -380,9 +87,9 @@ text-decoration: underline;
     <!-- Three -->
 <section id="three" class="wrapper style2 spotlights">
     <section>
-        
-            <img src="images/herr.png" alt="" data-position="center center" width="635" height="903" />
-       
+
+            <span class="image"><img src="images/her.png" alt="" data-position="center center" width="635" height="903" /></span>
+
         <div class="content">
             <div class="inner">
                 <h2>Hereditary Cancer gene panel</h2>
@@ -394,60 +101,6 @@ text-decoration: underline;
         </div>
     </section>
 </section>
-
-<style>
-        .brochure-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .brochure-list li {
-            margin-bottom: 30px;
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 5px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .brochure-list h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .brochure-list p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .brochure-list a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 15px;
-            background-color: #4285f4;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .brochure-list a:hover {
-            background-color: #3c78d8;
-        }
-
-        .brochure-list a i {
-            margin-right: 8px;
-        }
-         #report .actions .button:hover, #one .actions .button:hover, #two .actions .button:hover, #three .actions .button:hover, #four .actions .button:hover, #five .actions .button:hover {
-            background-color: #004080; 
-            color: blue !important;
-        }
-        #report {
-            border-top: 2px solid black;
-        }
-    </style>
 
    <!-- Four -->
 <section id="four" class="wrapper style2 spotlights">
@@ -527,7 +180,7 @@ text-decoration: underline;
 <!-- Report Templates -->
     <section id="report" class="wrapper style2 spotlights">
         <section>
-            <img src="images/report_templates.png" alt="" data-position="center center" width="635" height="903" />
+            <span class="image"><img src="images/report_templates.png" alt="" data-position="center center" width="635" height="903" /></span>
             <div class="content">
                 <div class="inner">
                     <h2>Report Templates</h2>

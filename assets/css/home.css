@@ -1,0 +1,315 @@
+/* ==========================================================================
+   Anderson Clinical Genetics — homepage theme
+   Clean clinical look: white canvas, navy + orange brand accents.
+   Loaded after main.css / fontawesome / Lato so it wins the cascade
+   without needing !important.
+   ========================================================================== */
+
+:root {
+	--navy: #004080;
+	--navy-dark: #002d5c;
+	--orange: #ff8800;
+	--orange-dark: #e67700;
+	--bg: #ffffff;
+	--bg-alt: #f4f7fb;
+	--text: #1c2733;
+	--text-muted: #5b6b7c;
+	--border: #dde5ef;
+	--shadow: 0 10px 30px rgba(0, 64, 128, 0.08);
+	--radius: 12px;
+}
+
+body {
+	background: var(--bg);
+	color: var(--text);
+	font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3 { color: var(--navy); }
+p { color: var(--text-muted); }
+a { color: var(--navy); }
+
+/* ---------------------------------------------------------------------
+   Sidebar
+   --------------------------------------------------------------------- */
+
+#sidebar {
+	background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%) !important;
+}
+
+#sidebar .inner {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+#sidebar nav {
+	padding: 0.5em 1em 1.5em 1em;
+}
+
+#sidebar ul li {
+	margin-bottom: 0.6em;
+}
+
+#sidebar ul li a {
+	display: block;
+	padding: 0.85em 1em;
+	color: rgba(255, 255, 255, 0.85) !important;
+	text-decoration: none;
+	font-weight: bold;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 8px;
+	transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+#sidebar ul li a:hover {
+	background-color: rgba(255, 255, 255, 0.12);
+	border-color: rgba(255, 255, 255, 0.35);
+	color: #ffffff !important;
+}
+
+#sidebar ul li a.active {
+	background-color: var(--orange) !important;
+	border-color: var(--orange) !important;
+	color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------------------
+   Intro / hero
+   --------------------------------------------------------------------- */
+
+#intro {
+	background: var(--bg) !important;
+	color: var(--text) !important;
+	position: relative;
+	border: none;
+	padding: 2em 2em 1em 2em;
+}
+
+#intro .inner {
+	max-width: 44em;
+	margin-top: 2.5em;
+}
+
+#intro h1 {
+	color: var(--navy) !important;
+	font-weight: 900;
+	line-height: 1.15;
+}
+
+#intro .inner p {
+	color: var(--text-muted) !important;
+	font-size: 1.15em;
+}
+
+#intro .inner p a {
+	color: var(--orange);
+	font-weight: bold;
+}
+
+#intro .actions .button {
+	background: var(--orange) !important;
+	border: 2px solid var(--orange) !important;
+	color: #ffffff !important;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+}
+
+#intro .actions .button:hover {
+	background: var(--orange-dark) !important;
+	border-color: var(--orange-dark) !important;
+	color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------------------
+   Spotlight sections (Germline / Disorders / Hereditary / Report Templates)
+   --------------------------------------------------------------------- */
+
+#one, #two, #three, #report {
+	background-color: var(--bg) !important;
+	color: var(--text) !important;
+}
+
+.spotlights > section:nth-child(even) {
+	background-color: var(--bg-alt) !important;
+}
+
+.spotlights > section > .image {
+	box-shadow: var(--shadow);
+}
+
+.spotlights > section > .content h2 {
+	color: var(--navy) !important;
+	font-size: 1.8em;
+	font-weight: 900;
+}
+
+.spotlights > section > .content p {
+	color: var(--text-muted) !important;
+	font-size: 1.05em;
+	line-height: 1.7;
+}
+
+.spotlights > section > .content .button,
+.wrapper.style2 .content .button {
+	color: var(--navy) !important;
+	border: 2px solid var(--navy) !important;
+	background: transparent !important;
+	font-weight: bold;
+}
+
+.spotlights > section > .content .button:hover,
+.wrapper.style2 .content .button:hover {
+	background: var(--navy) !important;
+	color: #ffffff !important;
+	border-color: var(--navy) !important;
+}
+
+/* ---------------------------------------------------------------------
+   Brochure grid
+   --------------------------------------------------------------------- */
+
+#four .content > .inner {
+	max-width: none;
+}
+
+#four h2 {
+	color: var(--navy) !important;
+}
+
+.brochure-list {
+	list-style: none;
+	padding: 0;
+	margin: 1.5em 0 0 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 1.25em;
+}
+
+.brochure-list li {
+	margin: 0;
+	padding: 1.5em;
+	background: #ffffff;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	display: flex;
+	flex-direction: column;
+}
+
+.brochure-list h3 {
+	font-size: 1.15em;
+	margin: 0 0 0.5em 0;
+	color: var(--navy);
+}
+
+.brochure-list p {
+	color: var(--text-muted);
+	font-size: 0.92em;
+	line-height: 1.6;
+	flex: 1;
+	margin: 0 0 1.25em 0;
+}
+
+.brochure-list a {
+	align-self: flex-start;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.6em 1.1em;
+	background: var(--orange);
+	color: #ffffff !important;
+	text-decoration: none;
+	border-radius: 999px;
+	font-weight: bold;
+	font-size: 0.9em;
+	transition: background-color 0.25s ease;
+}
+
+.brochure-list a:hover {
+	background: var(--orange-dark);
+}
+
+/* ---------------------------------------------------------------------
+   Get in touch
+   --------------------------------------------------------------------- */
+
+#five {
+	background: var(--bg-alt) !important;
+	border-top: none !important;
+	border-bottom: none !important;
+}
+
+#five h2 { color: var(--navy) !important; }
+#five > .inner > p { color: var(--text-muted) !important; }
+
+#five .fields label {
+	color: var(--navy) !important;
+	font-weight: bold;
+}
+
+#five .fields input,
+#five .fields textarea {
+	border: 2px solid var(--border) !important;
+	border-radius: 8px;
+	background: #ffffff;
+}
+
+#five .fields input:focus,
+#five .fields textarea:focus {
+	border-color: var(--navy) !important;
+}
+
+#five .button.submit {
+	background: var(--orange) !important;
+	border: 2px solid var(--orange) !important;
+	color: #ffffff !important;
+	font-weight: bold;
+}
+
+#five .button.submit:hover {
+	background: var(--orange-dark) !important;
+	border-color: var(--orange-dark) !important;
+}
+
+#five .contact li {
+	color: var(--text) !important;
+	border-bottom: 1px solid var(--border);
+	padding-bottom: 0.75em;
+	margin-bottom: 0.75em;
+}
+
+#five .contact li h3 {
+	color: var(--navy) !important;
+	font-size: 1em;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	margin-bottom: 0.25em;
+}
+
+#five .contact .icons a {
+	color: var(--navy) !important;
+	border-color: var(--border) !important;
+}
+
+#five .contact .icons a:hover {
+	background: var(--navy) !important;
+	color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------------------
+   Footer
+   --------------------------------------------------------------------- */
+
+#footer {
+	background: var(--navy-dark) !important;
+	color: rgba(255, 255, 255, 0.75) !important;
+}
+
+#footer .menu li,
+#footer span,
+#footer a {
+	color: rgba(255, 255, 255, 0.75) !important;
+}
+
+#footer a:hover { color: #ffffff !important; }
