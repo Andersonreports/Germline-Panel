@@ -169,33 +169,10 @@ a { color: var(--navy); }
    Brochure grid
    --------------------------------------------------------------------- */
 
-/* Solid brand-color accent panel, replacing the old placeholder photo.
-   !important beats the inline background-image the template's JS sets
-   from the (now absent) <img> tag. */
-.image.brochure-panel {
-	background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%) !important;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-}
-
-.image.brochure-panel:after {
-	content: '';
-	position: absolute;
-	width: 16em;
-	height: 16em;
-	border-radius: 50%;
-	background: rgba(255, 136, 0, 0.15);
-	top: -5em;
-	right: -6em;
-}
-
-.image.brochure-panel .icon {
-	position: relative;
-	z-index: 1;
-	font-size: 6em;
-	color: rgba(255, 255, 255, 0.22);
+/* No side image for this section (it's the longest one on the page) —
+   let the card grid use the full width instead. */
+#four .content {
+	width: 100% !important;
 }
 
 #four .content > .inner {
