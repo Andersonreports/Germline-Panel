@@ -125,7 +125,7 @@ a { color: var(--navy); }
    Spotlight sections (Germline / Disorders / Hereditary / Report Templates)
    --------------------------------------------------------------------- */
 
-#one, #two, #three, #report {
+#one, #two, #three, #four, #report {
 	background-color: var(--bg) !important;
 	color: var(--text) !important;
 }
@@ -168,6 +168,35 @@ a { color: var(--navy); }
 /* ---------------------------------------------------------------------
    Brochure grid
    --------------------------------------------------------------------- */
+
+/* Solid brand-color accent panel, replacing the old placeholder photo.
+   !important beats the inline background-image the template's JS sets
+   from the (now absent) <img> tag. */
+.image.brochure-panel {
+	background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%) !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.image.brochure-panel:after {
+	content: '';
+	position: absolute;
+	width: 16em;
+	height: 16em;
+	border-radius: 50%;
+	background: rgba(255, 136, 0, 0.15);
+	top: -5em;
+	right: -6em;
+}
+
+.image.brochure-panel .icon {
+	position: relative;
+	z-index: 1;
+	font-size: 6em;
+	color: rgba(255, 255, 255, 0.22);
+}
 
 #four .content > .inner {
 	max-width: none;
