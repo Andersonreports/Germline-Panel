@@ -325,6 +325,16 @@ a { color: var(--navy); }
 	border-right-color: var(--border) !important;
 }
 
+/* The default 66/33 split left the narrow contact column wrapping
+   its address awkwardly — give it a bit more room. */
+#five .split.style1 > :nth-child(2n - 1) {
+	width: calc(58% - 2.5em);
+}
+
+#five .split.style1 > :nth-child(2n) {
+	width: calc(42% - 2.5em);
+}
+
 #five .fields label {
 	color: var(--navy) !important;
 	font-weight: bold;
@@ -366,7 +376,17 @@ a { color: var(--navy); }
 	font-size: 1em;
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
-	margin-bottom: 0.25em;
+	margin-bottom: 0.4em;
+}
+
+#five .contact li h3 .icon {
+	color: var(--orange);
+	margin-right: 0.5em;
+}
+
+#five .contact li a {
+	color: var(--navy) !important;
+	word-break: break-word;
 }
 
 #five .contact .icons a {
