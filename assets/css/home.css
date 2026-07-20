@@ -84,11 +84,38 @@ a { color: var(--navy); }
 	position: relative;
 	border: none;
 	padding: 2em 2em 1em 2em;
+	overflow: hidden;
+}
+
+#intro:before,
+#intro:after {
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+	z-index: 0;
+}
+
+#intro:before {
+	width: 34em;
+	height: 34em;
+	background: radial-gradient(circle, rgba(0, 64, 128, 0.07) 0%, rgba(0, 64, 128, 0) 70%);
+	top: -12em;
+	right: -8em;
+}
+
+#intro:after {
+	width: 22em;
+	height: 22em;
+	background: radial-gradient(circle, rgba(255, 136, 0, 0.1) 0%, rgba(255, 136, 0, 0) 70%);
+	bottom: -8em;
+	right: 8em;
 }
 
 #intro .inner {
 	max-width: 44em;
 	margin-top: 2.5em;
+	position: relative;
+	z-index: 1;
 }
 
 #intro h1 {
@@ -125,13 +152,16 @@ a { color: var(--navy); }
    Spotlight sections (Germline / Disorders / Hereditary / Report Templates)
    --------------------------------------------------------------------- */
 
-#one, #two, #three, #four, #report {
+/* Each spotlight is its own independent .wrapper, so alternating tone
+   has to be assigned explicitly per section rather than via nth-child. */
+#one, #four {
 	background-color: var(--bg) !important;
 	color: var(--text) !important;
 }
 
-.spotlights > section:nth-child(even) {
+#two, #three, #report {
 	background-color: var(--bg-alt) !important;
+	color: var(--text) !important;
 }
 
 .spotlights > section > .image {
@@ -139,9 +169,22 @@ a { color: var(--navy); }
 }
 
 .spotlights > section > .content h2 {
+	position: relative;
 	color: var(--navy) !important;
 	font-size: 1.8em;
 	font-weight: 900;
+	padding-top: 0.6em;
+}
+
+.spotlights > section > .content h2:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 3em;
+	height: 4px;
+	border-radius: 2px;
+	background: var(--orange);
 }
 
 .spotlights > section > .content p {
@@ -201,6 +244,12 @@ a { color: var(--navy); }
 	box-shadow: var(--shadow);
 	display: flex;
 	flex-direction: column;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brochure-list li:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 16px 34px rgba(0, 64, 128, 0.14);
 }
 
 .brochure-list h3 {
@@ -246,8 +295,35 @@ a { color: var(--navy); }
 	border-bottom: none !important;
 }
 
-#five h2 { color: var(--navy) !important; }
+#five h2 {
+	position: relative;
+	color: var(--navy) !important;
+	padding-top: 0.6em;
+}
+
+#five h2:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 3em;
+	height: 4px;
+	border-radius: 2px;
+	background: var(--orange);
+}
+
 #five > .inner > p { color: var(--text-muted) !important; }
+
+/* The two columns default to equal-height (flex stretch), which left a
+   large empty gap under the shorter form once the contact list on the
+   right grew past it. Let each column size to its own content instead. */
+#five .split {
+	align-items: flex-start;
+}
+
+#five .split > :first-child {
+	border-right-color: var(--border) !important;
+}
 
 #five .fields label {
 	color: var(--navy) !important;
