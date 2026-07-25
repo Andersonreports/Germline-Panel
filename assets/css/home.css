@@ -30,48 +30,117 @@ p { color: var(--text-muted); }
 a { color: var(--navy); }
 
 /* ---------------------------------------------------------------------
-   Sidebar
+   Top nav (index.html and panelss.html)
    --------------------------------------------------------------------- */
 
-#sidebar {
-	background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%) !important;
+.site-nav {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: #ffffff;
+	border-bottom: 1px solid var(--border);
+	box-shadow: 0 2px 12px rgba(0, 64, 128, 0.06);
 }
 
-#sidebar .inner {
+.site-nav__inner {
+	max-width: 90em;
+	margin: 0 auto;
+	padding: 0.85em 2em;
 	display: flex;
-	flex-direction: column;
-	height: 100%;
+	align-items: center;
+	gap: 2em;
 }
 
-#sidebar nav {
-	padding: 0.5em 1em 1.5em 1em;
+.site-nav__brand {
+	display: flex;
+	align-items: center;
+	gap: 0.6em;
+	text-decoration: none;
+	margin-right: auto;
 }
 
-#sidebar ul li {
-	margin-bottom: 0.6em;
+.site-nav__brand img {
+	width: 2.2em;
+	height: 2.2em;
+	object-fit: contain;
 }
 
-#sidebar ul li a {
-	display: block;
-	padding: 0.85em 1em;
-	color: rgba(255, 255, 255, 0.85) !important;
+.site-nav__brand span {
+	color: var(--navy);
+	font-weight: 900;
+	line-height: 1.15;
+	font-size: 0.95em;
+}
+
+.site-nav__links {
+	display: flex;
+	align-items: center;
+	gap: 1.75em;
+}
+
+.site-nav__links a {
+	color: var(--text);
 	text-decoration: none;
 	font-weight: bold;
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	border-radius: 8px;
-	transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+	font-size: 0.92em;
+	padding-bottom: 0.3em;
+	border-bottom: 2px solid transparent;
+	transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-#sidebar ul li a:hover {
-	background-color: rgba(255, 255, 255, 0.12);
-	border-color: rgba(255, 255, 255, 0.35);
-	color: #ffffff !important;
+.site-nav__links a:hover {
+	color: var(--navy);
+	border-bottom-color: var(--orange);
 }
 
-#sidebar ul li a.active {
-	background-color: var(--orange) !important;
-	border-color: var(--orange) !important;
+.site-nav__cta {
+	background: var(--orange) !important;
+	border: 2px solid var(--orange) !important;
 	color: #ffffff !important;
+	font-weight: bold;
+	padding: 0.6em 1.4em !important;
+	font-size: 0.85em !important;
+}
+
+.site-nav__cta:hover {
+	background: var(--orange-dark) !important;
+	border-color: var(--orange-dark) !important;
+}
+
+@media screen and (max-width: 800px) {
+	.site-nav__links {
+		display: none;
+	}
+}
+
+/* ---------------------------------------------------------------------
+   Section eyebrow (small accent label used above section headings)
+   --------------------------------------------------------------------- */
+
+.section-eyebrow span {
+	display: inline-block;
+	position: relative;
+	padding-top: 0.6em;
+	color: var(--navy);
+	font-weight: 900;
+	font-size: 0.85em;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.section-eyebrow span:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 3em;
+	height: 4px;
+	border-radius: 2px;
+	background: var(--orange);
+}
+
+.section-eyebrow--light span {
+	color: rgba(255, 255, 255, 0.85);
 }
 
 /* ---------------------------------------------------------------------
@@ -148,6 +217,97 @@ a { color: var(--navy); }
 	color: #ffffff !important;
 }
 
+/* The hero is a two-column grid (text + brand panel); these overrides
+   target the extra .hero__inner class rather than the plain #intro .inner
+   rules above so they apply on top of them. */
+#intro.hero {
+	padding: 3em 2em 4em 2em;
+}
+
+#intro .hero__inner {
+	max-width: 82em;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1.15fr 0.85fr;
+	gap: 3em;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+}
+
+.hero__badge {
+	display: inline-block;
+	background: rgba(0, 64, 128, 0.08);
+	color: var(--navy);
+	font-weight: bold;
+	font-size: 0.8em;
+	letter-spacing: 0.04em;
+	padding: 0.4em 1em;
+	border-radius: 999px;
+	margin-bottom: 1em;
+}
+
+#intro .hero__content h1 {
+	font-size: 2.4em;
+}
+
+#intro .hero__content h1 .accent {
+	color: var(--orange);
+}
+
+#intro .hero__content p {
+	max-width: 32em;
+}
+
+#intro .hero__content .actions .button.alt {
+	background: transparent !important;
+	color: var(--navy) !important;
+	border: 2px solid var(--navy) !important;
+}
+
+#intro .hero__content .actions .button.alt:hover {
+	background: var(--navy) !important;
+	color: #ffffff !important;
+}
+
+.hero__visual {
+	border-radius: var(--radius);
+	background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+	box-shadow: var(--shadow);
+	padding: 2.5em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5em;
+	aspect-ratio: 4 / 3;
+}
+
+.hero__visual-mark {
+	max-width: 45%;
+	filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+}
+
+/* pic2.png is a logo lockup on an opaque white background, so it needs to
+   sit on its own card rather than directly on the navy gradient. */
+.hero__visual-logo {
+	max-width: 60%;
+	background: #ffffff;
+	border-radius: 8px;
+	padding: 0.6em 1em;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 980px) {
+	#intro .hero__inner {
+		grid-template-columns: 1fr;
+	}
+
+	.hero__visual {
+		order: -1;
+	}
+}
+
 /* ---------------------------------------------------------------------
    Spotlight sections (Germline / Disorders / Hereditary / Report Templates)
    --------------------------------------------------------------------- */
@@ -221,33 +381,214 @@ a { color: var(--navy); }
 }
 
 /* ---------------------------------------------------------------------
-   Brochure grid
+   Core diagnostic panels (Germline + Hereditary card grid)
    --------------------------------------------------------------------- */
 
-/* No side image for this section (it's the longest one on the page) —
-   let the card grid use the full width instead. */
-#four .content {
-	width: 100% !important;
+.panel-grid-section {
+	background: var(--bg-alt) !important;
+	color: var(--text) !important;
 }
 
-#four .content > .inner {
-	max-width: none;
+.panel-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	align-items: stretch;
+	gap: 2em;
+	margin-top: 1em;
 }
 
-/* Metagenomics and Report Templates have no side image, so the fixed
-   content width left a large dead gap where the image would have sat. */
-#metagenomics .content,
+/* panelss.html's "Disorders based gene panel" card has no source image
+   (the original markup pointed at an empty src) — give the text-only
+   card a bit more breathing room instead of a broken image slot. */
+.panel-card--no-image .panel-card__body {
+	padding-top: 2.5em;
+}
+
+.panel-card {
+	background: #ffffff;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 16px 34px rgba(0, 64, 128, 0.16);
+}
+
+.panel-card__image {
+	aspect-ratio: 16 / 10;
+	overflow: hidden;
+}
+
+.panel-card__image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.panel-card__body {
+	padding: 1.75em;
+}
+
+.panel-card__tag {
+	display: inline-block;
+	background: rgba(0, 64, 128, 0.08);
+	color: var(--navy) !important;
+	font-weight: bold;
+	font-size: 0.75em;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	padding: 0.3em 0.9em;
+	border-radius: 999px;
+	margin-bottom: 0.9em;
+}
+
+.panel-card__tag--alt {
+	background: rgba(255, 136, 0, 0.12);
+	color: var(--orange-dark) !important;
+}
+
+.panel-card h2 {
+	color: var(--navy);
+	font-size: 1.4em;
+	font-weight: 900;
+	margin: 0 0 0.5em 0;
+}
+
+.panel-card p {
+	color: var(--text-muted);
+	line-height: 1.7;
+	margin: 0 0 1.2em 0;
+}
+
+.panel-card__link {
+	color: var(--navy);
+	font-weight: bold;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+}
+
+.panel-card__link:after {
+	content: '\2192';
+}
+
+.panel-card__link:hover {
+	color: var(--orange);
+}
+
+@media screen and (max-width: 900px) {
+	.panel-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ---------------------------------------------------------------------
+   Metagenomics banner
+   --------------------------------------------------------------------- */
+
+.meta-banner {
+	background: linear-gradient(120deg, var(--navy) 0%, var(--navy-dark) 100%) !important;
+	color: #ffffff !important;
+}
+
+.meta-banner h2 {
+	color: #ffffff !important;
+	font-weight: 900;
+}
+
+.meta-banner p {
+	color: rgba(255, 255, 255, 0.8) !important;
+	line-height: 1.7;
+}
+
+.meta-banner .button {
+	background: var(--orange) !important;
+	border: 2px solid var(--orange) !important;
+	color: #ffffff !important;
+	font-weight: bold;
+}
+
+.meta-banner .button:hover {
+	background: var(--orange-dark) !important;
+	border-color: var(--orange-dark) !important;
+}
+
+.meta-banner__inner {
+	display: grid;
+	grid-template-columns: 1.2fr 1fr;
+	gap: 3em;
+	align-items: center;
+}
+
+.meta-banner__tiles {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1em;
+}
+
+.meta-tile {
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: var(--radius);
+	padding: 1.4em;
+}
+
+.meta-tile i {
+	color: var(--orange);
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	display: block;
+}
+
+.meta-tile h3 {
+	color: #ffffff !important;
+	font-size: 1em;
+	margin: 0 0 0.3em 0;
+}
+
+.meta-tile p {
+	color: rgba(255, 255, 255, 0.7) !important;
+	font-size: 0.85em;
+	line-height: 1.5;
+	margin: 0;
+}
+
+@media screen and (max-width: 900px) {
+	.meta-banner__inner {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Report Templates has no side image, so the fixed content width left a
+   large dead gap where the image would have sat. */
 #report .content {
 	width: 100% !important;
 }
 
-#metagenomics .content > .inner,
 #report .content > .inner {
 	max-width: 44em;
 }
 
+/* ---------------------------------------------------------------------
+   Brochure grid
+   --------------------------------------------------------------------- */
+
 #four h2 {
 	color: var(--navy) !important;
+}
+
+.brochure-list__icon {
+	color: var(--orange);
+	font-size: 1.4em;
+	margin-bottom: 0.6em;
+	display: block;
 }
 
 .brochure-list {
@@ -264,11 +605,16 @@ a { color: var(--navy); }
 	padding: 1.5em;
 	background: #ffffff;
 	border: 1px solid var(--border);
+	border-left: 4px solid var(--navy);
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
 	display: flex;
 	flex-direction: column;
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brochure-list li:nth-child(even) {
+	border-left-color: var(--orange);
 }
 
 .brochure-list li:hover {
@@ -314,7 +660,7 @@ a { color: var(--navy); }
    --------------------------------------------------------------------- */
 
 #five {
-	background: var(--bg-alt) !important;
+	background: var(--bg) !important;
 	border-top: none !important;
 	border-bottom: none !important;
 }
@@ -346,7 +692,8 @@ a { color: var(--navy); }
 }
 
 #five .split > :first-child {
-	border-right-color: var(--border) !important;
+	border-right: none !important;
+	padding-right: 3em;
 }
 
 /* The default 66/33 split left the narrow contact column wrapping
@@ -423,6 +770,41 @@ a { color: var(--navy); }
 	color: #ffffff !important;
 }
 
+/* Dark info panel wrapping the contact list (index.html only). */
+#five .contact__info {
+	background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+	border-radius: var(--radius);
+	padding: 2em;
+	box-shadow: var(--shadow);
+}
+
+#five .contact__info .contact li {
+	color: rgba(255, 255, 255, 0.9) !important;
+	border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+#five .contact__info .contact li h3 {
+	color: #ffffff !important;
+}
+
+#five .contact__info .contact li h3 .icon {
+	color: var(--orange);
+}
+
+#five .contact__info .contact li a {
+	color: rgba(255, 255, 255, 0.9) !important;
+}
+
+#five .contact__info .contact .icons a {
+	color: #ffffff !important;
+	border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+#five .contact__info .contact .icons a:hover {
+	background: var(--orange) !important;
+	border-color: var(--orange) !important;
+}
+
 /* ---------------------------------------------------------------------
    Footer
    --------------------------------------------------------------------- */
@@ -436,6 +818,80 @@ a { color: var(--navy); }
 #footer span,
 #footer a {
 	color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.site-footer__grid {
+	display: grid;
+	grid-template-columns: 1.3fr 1fr auto;
+	gap: 3em;
+	align-items: start;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.site-footer__brand {
+	display: flex;
+	align-items: center;
+	gap: 0.8em;
+}
+
+.site-footer__brand img {
+	width: 2.4em;
+	height: 2.4em;
+	object-fit: contain;
+	background: #ffffff;
+	border-radius: 6px;
+	padding: 0.2em;
+}
+
+.site-footer__brand p {
+	color: rgba(255, 255, 255, 0.75) !important;
+	margin: 0;
+	font-size: 0.95em;
+}
+
+.site-footer__links h4 {
+	color: #ffffff;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin: 0 0 0.8em 0;
+}
+
+.site-footer__links ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.site-footer__links li {
+	margin-bottom: 0.5em;
+}
+
+.site-footer__links a {
+	color: rgba(255, 255, 255, 0.75);
+	text-decoration: none;
+	font-size: 0.92em;
+}
+
+.site-footer__links a:hover {
+	color: #ffffff;
+}
+
+.site-footer__legal {
+	text-align: right;
+	font-size: 0.85em;
+}
+
+@media screen and (max-width: 800px) {
+	.site-footer__grid {
+		grid-template-columns: 1fr;
+		text-align: left;
+	}
+
+	.site-footer__legal {
+		text-align: left;
+	}
 }
 
 #footer a:hover { color: #ffffff !important; }
