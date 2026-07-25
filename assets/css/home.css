@@ -234,7 +234,7 @@ a { color: var(--navy); }
    abstract navy gradient + pattern standing in for a lab photo rather
    than a literal (and potentially misleading) photograph. */
 #intro.hero--photo {
-	background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 65%, #001a38 100%) !important;
+	background: url('../../images/screen.png') center 30% / cover no-repeat !important;
 	position: relative;
 	overflow: hidden;
 	min-height: 30em;
@@ -249,13 +249,11 @@ a { color: var(--navy); }
 	display: none;
 }
 
+/* Dark scrim over the lab photo so the white overlay text stays readable. */
 #intro.hero--photo .hero__pattern {
 	position: absolute;
 	inset: 0;
-	background-image:
-		radial-gradient(circle at 12% 25%, rgba(255, 255, 255, 0.07) 0%, transparent 40%),
-		radial-gradient(circle at 88% 75%, rgba(255, 136, 0, 0.18) 0%, transparent 45%),
-		repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.035) 0 2px, transparent 2px 42px);
+	background: linear-gradient(135deg, rgba(0, 42, 89, 0.88) 0%, rgba(0, 32, 68, 0.85) 55%, rgba(0, 20, 45, 0.9) 100%);
 	pointer-events: none;
 }
 
