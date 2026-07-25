@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 635 530" width="635" height="530">
+<rect x="0" y="0" width="635" height="530" fill="#ffffff"/>
+<text x="317.5" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="24" fill="#004080">HEREDITARY CANCER RISK</text>
+<text x="317.5" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="15" letter-spacing="2" fill="#5b6b7c">FAMILY PEDIGREE</text>
+<line x1="264" y1="140" x2="366" y2="140" stroke="#a9b7c6" stroke-width="3"/>
+<line x1="315.0" y1="174" x2="315.0" y2="200" stroke="#a9b7c6" stroke-width="3"/>
+<line x1="240" y1="200" x2="395" y2="200" stroke="#a9b7c6" stroke-width="3"/>
+<line x1="240" y1="200" x2="240" y2="226" stroke="#a9b7c6" stroke-width="3"/>
+<line x1="395" y1="200" x2="395" y2="226" stroke="#a9b7c6" stroke-width="3"/>
+<line x1="429" y1="260" x2="471" y2="260" stroke="#a9b7c6" stroke-width="3"/>
+<circle cx="505.0" cy="260.0" r="34" fill="#ffffff" stroke="#004080" stroke-width="4"/>
+<line x1="450.0" y1="294" x2="450.0" y2="320" stroke="#a9b7c6" stroke-width="3"/>
+<line x1="315" y1="320" x2="475" y2="320" stroke="#a9b7c6" stroke-width="3"/>
+<line x1="315" y1="320" x2="315" y2="346" stroke="#a9b7c6" stroke-width="3"/>
+<line x1="395" y1="320" x2="395" y2="346" stroke="#a9b7c6" stroke-width="3"/>
+<line x1="475" y1="320" x2="475" y2="346" stroke="#a9b7c6" stroke-width="3"/>
+<rect x="196.0" y="106.0" width="68" height="68" fill="#ffffff" stroke="#004080" stroke-width="4"/>
+<circle cx="400.0" cy="140.0" r="34" fill="#ff8800" stroke="#ff8800" stroke-width="4"/>
+<circle cx="240.0" cy="260.0" r="34" fill="#ff8800" stroke="#ff8800" stroke-width="4"/>
+<rect x="361.0" y="226.0" width="68" height="68" fill="#ffffff" stroke="#004080" stroke-width="4"/>
+<circle cx="505.0" cy="260.0" r="34" fill="#ffffff" stroke="#004080" stroke-width="4"/>
+<circle cx="315.0" cy="380.0" r="34" fill="#ff8800" stroke="#ff8800" stroke-width="4"/>
+<rect x="361.0" y="346.0" width="68" height="68" fill="#ffffff" stroke="#004080" stroke-width="4"/>
+<circle cx="475.0" cy="380.0" r="34" fill="#ffffff" stroke="#004080" stroke-width="4"/>
+<rect x="26.0" y="431.0" width="68" height="68" fill="#ff8800" stroke="#ff8800" stroke-width="4"/>
+<text x="106" y="470" font-family="Arial, sans-serif" font-size="13" fill="#5b6b7c">Carrier / affected</text>
+<circle cx="330.0" cy="465.0" r="34" fill="#ffffff" stroke="#004080" stroke-width="4"/>
+<text x="376" y="470" font-family="Arial, sans-serif" font-size="13" fill="#5b6b7c">Unaffected</text>
+</svg>

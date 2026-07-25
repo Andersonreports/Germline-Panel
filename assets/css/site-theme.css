@@ -84,28 +84,17 @@ body {
 }
 
 #main .content h1.major {
-	position: relative;
 	color: var(--navy);
 	font-weight: 900;
-	padding-top: 0.6em;
 	margin-bottom: 0.6em;
 }
 
-#main .content h1.major:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 3.5em;
-	height: 4px;
-	border-radius: 2px;
-	background: var(--orange);
-}
-
 /* The base theme draws a purple-to-pink gradient rule under every
-   h1.major via :after — replace it with the brand navy/orange pairing. */
+   h1.major via :after — this site doesn't want an accent line under
+   headings at all, so hide it rather than recolor it. */
+#main .content h1.major:before,
 #main .content h1.major:after {
-	background-image: linear-gradient(to right, var(--navy), var(--orange)) !important;
+	display: none !important;
 }
 
 #main .content h2 {
