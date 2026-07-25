@@ -309,18 +309,11 @@ a { color: var(--navy); }
 }
 
 /* ---------------------------------------------------------------------
-   Spotlight sections (Germline / Disorders / Hereditary / Report Templates)
+   Spotlight sections
    --------------------------------------------------------------------- */
 
-/* Each spotlight is its own independent .wrapper, so alternating tone
-   has to be assigned explicitly per section rather than via nth-child. */
-#one, #four {
+#four {
 	background-color: var(--bg) !important;
-	color: var(--text) !important;
-}
-
-#two, #three, #report, #metagenomics {
-	background-color: var(--bg-alt) !important;
 	color: var(--text) !important;
 }
 
@@ -564,16 +557,6 @@ a { color: var(--navy); }
 	.meta-banner__inner {
 		grid-template-columns: 1fr;
 	}
-}
-
-/* Report Templates has no side image, so the fixed content width left a
-   large dead gap where the image would have sat. */
-#report .content {
-	width: 100% !important;
-}
-
-#report .content > .inner {
-	max-width: 44em;
 }
 
 /* ---------------------------------------------------------------------
