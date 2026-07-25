@@ -187,4 +187,9 @@
 				}
 			});
 
+	// Condition card accordion (report template hub pages).
+		$('.condition-card__header').on('click', function() {
+			$(this).closest('.condition-card').toggleClass('is-open');
+		});
+
 })(jQuery);

@@ -287,3 +287,187 @@ tbody tr:hover {
 #footer > .inner a:hover {
 	color: #ffffff;
 }
+
+/* ---------------------------------------------------------------------
+   Report template hub pages (index grids like Neuro_template.html)
+   --------------------------------------------------------------------- */
+
+.template-hub-subtitle {
+	color: var(--text-muted);
+	max-width: 44em;
+	margin: -0.5em 0 1.5em 0;
+}
+
+.template-hub-banner {
+	display: flex;
+	align-items: stretch;
+	gap: 2em;
+	background: var(--bg-alt);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 1.5em;
+	margin-bottom: 2em;
+}
+
+.template-hub-banner__visual {
+	flex: none;
+	width: 16em;
+	border-radius: calc(var(--radius) - 2px);
+	background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.template-hub-banner__visual i {
+	color: rgba(255, 255, 255, 0.85);
+	font-size: 3em;
+}
+
+.template-hub-banner__content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.template-hub-banner__content h2 {
+	color: var(--navy);
+	margin: 0 0 0.4em 0;
+}
+
+.template-hub-banner__content p {
+	color: var(--text-muted);
+	margin: 0;
+}
+
+@media screen and (max-width: 700px) {
+	.template-hub-banner {
+		flex-direction: column;
+	}
+
+	.template-hub-banner__visual {
+		width: 100%;
+		height: 8em;
+	}
+}
+
+.condition-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.condition-card {
+	background: #ffffff;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	overflow: hidden;
+}
+
+.condition-card__header {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	width: 100%;
+	padding: 1.1em 1.4em;
+	background: none;
+	border: none;
+	cursor: pointer;
+	text-align: left;
+	font: inherit;
+}
+
+.condition-card__icon {
+	flex: none;
+	width: 2.6em;
+	height: 2.6em;
+	border-radius: 10px;
+	background: var(--navy);
+	color: #ffffff;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.1em;
+}
+
+.condition-card__meta {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.condition-card__name {
+	color: var(--text);
+	font-weight: bold;
+	font-size: 1.05em;
+}
+
+.condition-card__count {
+	color: var(--text-muted);
+	font-size: 0.85em;
+}
+
+.condition-card__chevron {
+	flex: none;
+	color: var(--text-muted);
+	transition: transform 0.2s ease;
+}
+
+.condition-card.is-open .condition-card__chevron {
+	transform: rotate(180deg);
+}
+
+.condition-card__body {
+	display: none;
+	padding: 0 1.4em 1.4em 1.4em;
+	border-top: 1px solid var(--border);
+	margin-top: 0.1em;
+	padding-top: 1.25em;
+}
+
+.condition-card.is-open .condition-card__body {
+	display: block;
+}
+
+.condition-btn-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.75em;
+}
+
+.condition-btn-grid a {
+	display: block;
+	text-align: center;
+	padding: 0.85em 1em;
+	border-radius: 8px;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 0.92em;
+}
+
+.condition-btn-grid a.condition-btn--with {
+	background: var(--navy);
+	color: #ffffff !important;
+}
+
+.condition-btn-grid a.condition-btn--with:hover {
+	background: var(--navy-dark);
+}
+
+.condition-btn-grid a.condition-btn--without {
+	background: #ffffff;
+	color: var(--navy) !important;
+	border: 2px solid var(--navy);
+}
+
+.condition-btn-grid a.condition-btn--without:hover {
+	background: rgba(0, 64, 128, 0.06);
+}
+
+@media screen and (max-width: 700px) {
+	.condition-btn-grid {
+		grid-template-columns: 1fr;
+	}
+}
