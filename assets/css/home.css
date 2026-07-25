@@ -159,7 +159,7 @@ a { color: var(--navy); }
 	color: var(--text) !important;
 }
 
-#two, #three, #report {
+#two, #three, #report, #metagenomics {
 	background-color: var(--bg-alt) !important;
 	color: var(--text) !important;
 }
@@ -220,6 +220,18 @@ a { color: var(--navy); }
 
 #four .content > .inner {
 	max-width: none;
+}
+
+/* Metagenomics and Report Templates have no side image, so the fixed
+   content width left a large dead gap where the image would have sat. */
+#metagenomics .content,
+#report .content {
+	width: 100% !important;
+}
+
+#metagenomics .content > .inner,
+#report .content > .inner {
+	max-width: 44em;
 }
 
 #four h2 {
