@@ -704,20 +704,7 @@ a { color: var(--navy); }
 }
 
 #five h2 {
-	position: relative;
 	color: var(--navy) !important;
-	padding-top: 0.6em;
-}
-
-#five h2:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 3em;
-	height: 4px;
-	border-radius: 2px;
-	background: var(--orange);
 }
 
 #five > .inner > p { color: var(--text-muted) !important; }
@@ -776,21 +763,32 @@ a { color: var(--navy); }
 #five .contact li {
 	color: var(--text) !important;
 	border-bottom: 1px solid var(--border);
-	padding-bottom: 0.75em;
-	margin-bottom: 0.75em;
+	padding-bottom: 0.9em;
+	margin-bottom: 0.9em;
 }
 
 #five .contact li h3 {
+	display: flex;
+	align-items: center;
+	gap: 0.6em;
 	color: var(--navy) !important;
-	font-size: 1em;
+	font-size: 0.85em;
 	text-transform: uppercase;
-	letter-spacing: 0.04em;
-	margin-bottom: 0.4em;
+	letter-spacing: 0.06em;
+	margin-bottom: 0.5em;
 }
 
 #five .contact li h3 .icon {
+	flex: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.9em;
+	height: 1.9em;
+	border-radius: 8px;
+	background: rgba(0, 64, 128, 0.08);
 	color: var(--orange);
-	margin-right: 0.5em;
+	font-size: 0.85em;
 }
 
 #five .contact li a {
@@ -826,6 +824,7 @@ a { color: var(--navy); }
 }
 
 #five .contact__info .contact li h3 .icon {
+	background: rgba(255, 255, 255, 0.14);
 	color: var(--orange);
 }
 
