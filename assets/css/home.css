@@ -45,10 +45,10 @@ a { color: var(--navy); }
 .site-nav__inner {
 	max-width: 90em;
 	margin: 0 auto;
-	padding: 0.85em 2em;
+	padding: 1em 2.5em;
 	display: flex;
 	align-items: center;
-	gap: 2em;
+	gap: 2.5em;
 }
 
 .site-nav__brand {
@@ -98,8 +98,13 @@ a { color: var(--navy); }
 	border: 2px solid var(--orange) !important;
 	color: #ffffff !important;
 	font-weight: bold;
-	padding: 0.6em 1.4em !important;
+	letter-spacing: 0.04em;
+	height: auto !important;
+	line-height: 1.2 !important;
+	padding: 0.85em 1.8em !important;
 	font-size: 0.85em !important;
+	margin-left: 0.5em;
+	white-space: nowrap;
 }
 
 .site-nav__cta:hover {

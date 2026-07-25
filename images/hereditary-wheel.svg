@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 635 555" width="635" height="555">
+<rect x="0" y="0" width="635" height="555" fill="#ffffff"/>
+<line x1="317.5" y1="250.0" x2="317.5" y2="28.0" stroke="#e3e9f0" stroke-width="2"/>
+<line x1="317.5" y1="250.0" x2="448.0" y2="70.4" stroke="#e3e9f0" stroke-width="2"/>
+<line x1="317.5" y1="250.0" x2="528.6" y2="181.4" stroke="#e3e9f0" stroke-width="2"/>
+<line x1="317.5" y1="250.0" x2="528.6" y2="318.6" stroke="#e3e9f0" stroke-width="2"/>
+<line x1="317.5" y1="250.0" x2="448.0" y2="429.6" stroke="#e3e9f0" stroke-width="2"/>
+<line x1="317.5" y1="250.0" x2="317.5" y2="472.0" stroke="#e3e9f0" stroke-width="2"/>
+<line x1="317.5" y1="250.0" x2="187.0" y2="429.6" stroke="#e3e9f0" stroke-width="2"/>
+<line x1="317.5" y1="250.0" x2="106.4" y2="318.6" stroke="#e3e9f0" stroke-width="2"/>
+<line x1="317.5" y1="250.0" x2="106.4" y2="181.4" stroke="#e3e9f0" stroke-width="2"/>
+<line x1="317.5" y1="250.0" x2="187.0" y2="70.4" stroke="#e3e9f0" stroke-width="2"/>
+<circle cx="317.5" cy="250.0" r="140" fill="#004080"/>
+<text x="317.5" y="236.0" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="30" fill="#ffffff">HEREDITARY</text>
+<text x="317.5" y="272.0" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="30" fill="#ffffff">CANCER</text>
+<text x="317.5" y="308.0" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="30" fill="#ffffff">PANEL</text>
+<circle cx="317.5" cy="28.0" r="40" fill="#ff8800"/>
+<path d="M 317.5 15.0 C 304.5 15.0 304.5 31.0 314.5 34.0 L 308.5 43.0 M 317.5 15.0 C 330.5 15.0 330.5 31.0 320.5 34.0 L 326.5 43.0" stroke="#ffffff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="317.5" y="88.0" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="0.5" fill="#5b6b7c">BREAST</text>
+<circle cx="448.0" cy="70.4" r="40" fill="#ff8800"/>
+<path d="M 448.0 57.4 C 435.0 57.4 435.0 73.4 445.0 76.4 L 439.0 85.4 M 448.0 57.4 C 461.0 57.4 461.0 73.4 451.0 76.4 L 457.0 85.4" stroke="#ffffff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="448.0" y="130.4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="0.5" fill="#5b6b7c">OVARIAN</text>
+<circle cx="528.6" cy="181.4" r="40" fill="#ff8800"/>
+<path d="M 528.6 168.4 C 515.6 168.4 515.6 184.4 525.6 187.4 L 519.6 196.4 M 528.6 168.4 C 541.6 168.4 541.6 184.4 531.6 187.4 L 537.6 196.4" stroke="#ffffff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="528.6" y="241.4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="0.5" fill="#5b6b7c">ENDOMETRIAL</text>
+<circle cx="528.6" cy="318.6" r="40" fill="#ff8800"/>
+<path d="M 528.6 305.6 C 515.6 305.6 515.6 321.6 525.6 324.6 L 519.6 333.6 M 528.6 305.6 C 541.6 305.6 541.6 321.6 531.6 324.6 L 537.6 333.6" stroke="#ffffff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="528.6" y="378.6" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="0.5" fill="#5b6b7c">COLORECTAL</text>
+<circle cx="448.0" cy="429.6" r="40" fill="#ff8800"/>
+<path d="M 448.0 416.6 C 435.0 416.6 435.0 432.6 445.0 435.6 L 439.0 444.6 M 448.0 416.6 C 461.0 416.6 461.0 432.6 451.0 435.6 L 457.0 444.6" stroke="#ffffff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="448.0" y="489.6" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="0.5" fill="#5b6b7c">GASTRIC</text>
+<circle cx="317.5" cy="472.0" r="40" fill="#ff8800"/>
+<path d="M 317.5 459.0 C 304.5 459.0 304.5 475.0 314.5 478.0 L 308.5 487.0 M 317.5 459.0 C 330.5 459.0 330.5 475.0 320.5 478.0 L 326.5 487.0" stroke="#ffffff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="317.5" y="532.0" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="0.5" fill="#5b6b7c">PANCREATIC</text>
+<circle cx="187.0" cy="429.6" r="40" fill="#ff8800"/>
+<path d="M 187.0 416.6 C 174.0 416.6 174.0 432.6 184.0 435.6 L 178.0 444.6 M 187.0 416.6 C 200.0 416.6 200.0 432.6 190.0 435.6 L 196.0 444.6" stroke="#ffffff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="187.0" y="489.6" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="0.5" fill="#5b6b7c">PROSTATE</text>
+<circle cx="106.4" cy="318.6" r="40" fill="#ff8800"/>
+<path d="M 106.4 305.6 C 93.4 305.6 93.4 321.6 103.4 324.6 L 97.4 333.6 M 106.4 305.6 C 119.4 305.6 119.4 321.6 109.4 324.6 L 115.4 333.6" stroke="#ffffff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="106.4" y="378.6" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="0.5" fill="#5b6b7c">MELANOMA</text>
+<circle cx="106.4" cy="181.4" r="40" fill="#ff8800"/>
+<path d="M 106.4 168.4 C 93.4 168.4 93.4 184.4 103.4 187.4 L 97.4 196.4 M 106.4 168.4 C 119.4 168.4 119.4 184.4 109.4 187.4 L 115.4 196.4" stroke="#ffffff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="106.4" y="241.4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="0.5" fill="#5b6b7c">RENAL</text>
+<circle cx="187.0" cy="70.4" r="40" fill="#ff8800"/>
+<path d="M 187.0 57.4 C 174.0 57.4 174.0 73.4 184.0 76.4 L 178.0 85.4 M 187.0 57.4 C 200.0 57.4 200.0 73.4 190.0 76.4 L 196.0 85.4" stroke="#ffffff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="187.0" y="130.4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="0.5" fill="#5b6b7c">THYROID</text>
+</svg>
