@@ -1,0 +1,289 @@
+/* ==========================================================================
+   Anderson Clinical Genetics — inner-page theme
+   Applies the same navy / orange clinical brand used on the homepage
+   (assets/css/home.css) to every "header + content + footer" page:
+   panel category pages, disease/gene tables, report templates, brochures.
+
+   Loaded as the LAST stylesheet in <head> (after main.css and each page's
+   own inline <style> block) so it can restyle inline, per-page rules
+   without needing to touch the markup or copy on every page.
+   Nothing here changes section order, wording, or grouping — presentation
+   only.
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap");
+
+:root {
+	--navy: #004080;
+	--navy-dark: #002d5c;
+	--orange: #ff8800;
+	--orange-dark: #e67700;
+	--bg: #ffffff;
+	--bg-alt: #f4f7fb;
+	--text: #1c2733;
+	--text-muted: #5b6b7c;
+	--border: #dde5ef;
+	--shadow: 0 10px 30px rgba(0, 64, 128, 0.08);
+	--radius: 12px;
+}
+
+body {
+	background: var(--bg);
+	color: var(--text);
+	font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* ---------------------------------------------------------------------
+   Header / nav — replace the default purple bar with the site brand
+   --------------------------------------------------------------------- */
+
+#header {
+	background: linear-gradient(120deg, var(--navy) 0%, var(--navy-dark) 100%);
+	box-shadow: 0 2px 18px rgba(0, 45, 92, 0.25);
+	position: sticky;
+	top: 0;
+	z-index: 10000;
+}
+
+#header > .title {
+	color: #ffffff;
+	font-weight: 900;
+	letter-spacing: 0.02em;
+	opacity: 0.95;
+	transition: opacity 0.2s ease;
+}
+
+#header > .title:hover {
+	opacity: 1;
+	color: #ffffff;
+}
+
+#header > nav > ul > li a {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 0.7em;
+	padding-bottom: 0.35em;
+	border-bottom: 2px solid transparent;
+}
+
+#header > nav > ul > li a:hover {
+	color: #ffffff;
+	border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+#header > nav > ul > li a.active {
+	color: #ffffff;
+	border-bottom-color: var(--orange);
+}
+
+/* ---------------------------------------------------------------------
+   Content area
+   --------------------------------------------------------------------- */
+
+#main.wrapper {
+	background: var(--bg);
+}
+
+#main .content h1.major {
+	position: relative;
+	color: var(--navy);
+	font-weight: 900;
+	padding-top: 0.6em;
+	margin-bottom: 0.6em;
+}
+
+#main .content h1.major:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 3.5em;
+	height: 4px;
+	border-radius: 2px;
+	background: var(--orange);
+}
+
+/* The base theme draws a purple-to-pink gradient rule under every
+   h1.major via :after — replace it with the brand navy/orange pairing. */
+#main .content h1.major:after {
+	background-image: linear-gradient(to right, var(--navy), var(--orange)) !important;
+}
+
+#main .content h2 {
+	color: var(--navy);
+	font-weight: 800;
+}
+
+#main .content h3 {
+	color: var(--navy);
+}
+
+#main .content p {
+	color: var(--text-muted);
+	line-height: 1.7;
+}
+
+#main .content ul li {
+	color: var(--text-muted);
+	line-height: 1.6;
+}
+
+#main .content a {
+	color: var(--navy);
+}
+
+#main .content a:hover {
+	color: var(--orange);
+}
+
+#main .content strong {
+	color: var(--text);
+}
+
+/* Logo badge that several pages absolutely-position top right of .content */
+#main .content > .image.logo img {
+	border-radius: 10px;
+}
+
+/* ---------------------------------------------------------------------
+   Buttons
+   --------------------------------------------------------------------- */
+
+.button,
+input[type="submit"],
+input[type="button"] {
+	background: var(--navy);
+	border-color: var(--navy);
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+	background: var(--orange);
+	border-color: var(--orange);
+	color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------
+   Report / template card grids (.report-boxes / .report-box)
+   Category colours set per box (bg-blue, bg-dark-orange-*) are left
+   untouched — they are the existing visual grouping. Only the shared
+   card chrome is upgraded.
+   --------------------------------------------------------------------- */
+
+.report-boxes {
+	gap: 1.25em;
+}
+
+.report-box {
+	border: none;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	font-weight: bold;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.report-box:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 16px 34px rgba(0, 64, 128, 0.18);
+}
+
+.report-box h2 {
+	font-size: 1.05em;
+	letter-spacing: 0.02em;
+	margin: 0;
+}
+
+/* ---------------------------------------------------------------------
+   Panel image grids (.image-grid) — Germline / Hereditary category tiles
+   --------------------------------------------------------------------- */
+
+.content .image-grid {
+	gap: 1.4em !important;
+}
+
+.content .image-grid a {
+	display: block;
+	background: #ffffff;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 0.6em;
+	box-shadow: var(--shadow);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content .image-grid a:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 16px 34px rgba(0, 64, 128, 0.16);
+}
+
+.content .image-grid img {
+	display: block;
+	width: 100% !important;
+	height: auto !important;
+	aspect-ratio: 1 / 1;
+	border-radius: calc(var(--radius) - 4px);
+}
+
+/* ---------------------------------------------------------------------
+   Gene / disease tables
+   --------------------------------------------------------------------- */
+
+table {
+	font-size: 0.95em;
+	box-shadow: var(--shadow);
+}
+
+th {
+	font-weight: 700 !important;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	font-size: 0.85em;
+}
+
+td {
+	color: var(--text-muted);
+	line-height: 1.55;
+	vertical-align: top;
+}
+
+tbody tr {
+	transition: background-color 0.15s ease;
+}
+
+tbody tr:hover {
+	background-color: #eef4fb !important;
+}
+
+/* ---------------------------------------------------------------------
+   Brochure list (used on the homepage but styled here too in case it's
+   reused on an inner page)
+   --------------------------------------------------------------------- */
+
+.brochure-list li {
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+}
+
+/* ---------------------------------------------------------------------
+   Footer
+   --------------------------------------------------------------------- */
+
+#footer.wrapper.alt,
+#footer.wrapper {
+	background: var(--navy-dark);
+}
+
+#footer > .inner .menu {
+	color: rgba(255, 255, 255, 0.55);
+}
+
+#footer > .inner a {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+#footer > .inner a:hover {
+	color: #ffffff;
+}
