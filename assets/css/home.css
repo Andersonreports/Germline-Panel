@@ -166,6 +166,18 @@ a { color: var(--navy); }
 
 .spotlights > section > .image {
 	box-shadow: var(--shadow);
+	overflow: hidden;
+}
+
+/* The Germline / Hereditary spotlight images carry native width/height
+   HTML attributes (635x903) with nothing constraining them to the 25em
+   image column, so they were rendered at full native size — overflowing
+   the column both sideways and vertically and bleeding into the section
+   below. Scale them to fill their column instead. */
+.spotlights > section > .image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .spotlights > section > .content h2 {
