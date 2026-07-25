@@ -217,24 +217,6 @@ a { color: var(--navy); }
 	color: #ffffff !important;
 }
 
-/* The hero is a two-column grid (text + brand panel); these overrides
-   target the extra .hero__inner class rather than the plain #intro .inner
-   rules above so they apply on top of them. */
-#intro.hero {
-	padding: 3em 2em 4em 2em;
-}
-
-#intro .hero__inner {
-	max-width: 82em;
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: 1.15fr 0.85fr;
-	gap: 3em;
-	align-items: center;
-	position: relative;
-	z-index: 1;
-}
-
 .hero__badge {
 	display: inline-block;
 	background: rgba(0, 64, 128, 0.08);
@@ -247,64 +229,94 @@ a { color: var(--navy); }
 	margin-bottom: 1em;
 }
 
-#intro .hero__content h1 {
+/* Full-bleed hero. There's no real photo of Anderson's facility in this
+   repo (and no way to source a stock one here), so the backdrop is an
+   abstract navy gradient + pattern standing in for a lab photo rather
+   than a literal (and potentially misleading) photograph. */
+#intro.hero--photo {
+	background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 65%, #001a38 100%) !important;
+	position: relative;
+	overflow: hidden;
+	min-height: 30em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4em 2em;
+}
+
+#intro.hero--photo:before,
+#intro.hero--photo:after {
+	display: none;
+}
+
+#intro.hero--photo .hero__pattern {
+	position: absolute;
+	inset: 0;
+	background-image:
+		radial-gradient(circle at 12% 25%, rgba(255, 255, 255, 0.07) 0%, transparent 40%),
+		radial-gradient(circle at 88% 75%, rgba(255, 136, 0, 0.18) 0%, transparent 45%),
+		repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.035) 0 2px, transparent 2px 42px);
+	pointer-events: none;
+}
+
+#intro.hero--photo .hero__inner {
+	position: relative;
+	z-index: 1;
+	max-width: 46em;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#intro.hero--photo .hero__badge {
+	background: rgba(255, 255, 255, 0.14);
+	color: #ffffff;
+}
+
+#intro.hero--photo .inner h1 {
+	color: #ffffff !important;
 	font-size: 2.4em;
 }
 
-#intro .hero__content h1 .accent {
+#intro.hero--photo .inner h1 .accent {
 	color: var(--orange);
 }
 
-#intro .hero__content p {
-	max-width: 32em;
+#intro.hero--photo .inner p {
+	color: rgba(255, 255, 255, 0.85) !important;
+	max-width: 34em;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-#intro .hero__content .actions .button.alt {
-	background: transparent !important;
-	color: var(--navy) !important;
-	border: 2px solid var(--navy) !important;
+#intro.hero--photo .inner p a {
+	color: var(--orange);
 }
 
-#intro .hero__content .actions .button.alt:hover {
-	background: var(--navy) !important;
-	color: #ffffff !important;
-}
-
-.hero__visual {
-	border-radius: var(--radius);
-	background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
-	box-shadow: var(--shadow);
-	padding: 2.5em;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+#intro.hero--photo .actions {
 	justify-content: center;
-	gap: 1.5em;
-	aspect-ratio: 4 / 3;
 }
 
-.hero__visual-mark {
-	max-width: 45%;
-	filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+#intro.hero--photo .actions .button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
 }
 
-/* pic2.png is a logo lockup on an opaque white background, so it needs to
-   sit on its own card rather than directly on the navy gradient. */
-.hero__visual-logo {
-	max-width: 60%;
-	background: #ffffff;
-	border-radius: 8px;
-	padding: 0.6em 1em;
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+#intro.hero--photo .actions .button.alt {
+	background: transparent !important;
+	color: #ffffff !important;
+	border: 2px solid rgba(255, 255, 255, 0.6) !important;
 }
 
-@media screen and (max-width: 980px) {
-	#intro .hero__inner {
-		grid-template-columns: 1fr;
-	}
+#intro.hero--photo .actions .button.alt:hover {
+	background: rgba(255, 255, 255, 0.14) !important;
+	border-color: #ffffff !important;
+}
 
-	.hero__visual {
-		order: -1;
+@media screen and (max-width: 700px) {
+	#intro.hero--photo {
+		min-height: 0;
+		padding: 3em 1.5em;
 	}
 }
 
