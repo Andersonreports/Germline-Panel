@@ -1,12 +1,17 @@
-/* Report preview modal.
-   Word (.docx) templates can't be rendered by a browser, so a "Preview"
-   button shows the identical PDF version of the same report in an overlay.
-   Markup contract: <button data-preview-pdf="path/to/report.pdf"
-   data-preview-title="Marfan syndrome — Version 1">Preview</button>
-   Paths may contain spaces and parentheses; they are encoded here. */
+/* Report preview overlay.
+   A browser cannot render a Word file, so clicking a report shows the
+   identical PDF version in an overlay; when the click came from a .docx
+   link, the overlay also offers that Word file as a download.
+
+   Markup contract: any <a> or <button> carrying
+     data-preview-pdf="path/to/report.pdf"
+     data-preview-title="Marfan syndrome - Version 1"
+   On an <a href="...docx"> the href is kept as the download target and as
+   the no-JavaScript fallback. Paths may contain spaces and parentheses;
+   they are encoded here. */
 (function () {
 
-	var overlay, frame, titleEl, tabLink, lastFocused;
+	var overlay, frame, titleEl, tabLink, docLink, lastFocused;
 
 	function build() {
 		overlay = document.createElement('div');
@@ -24,8 +29,9 @@
 				'</div>' +
 				'<iframe class="doc-preview__frame" title="Report preview"></iframe>' +
 				'<div class="doc-preview__foot">' +
-					'<span>Preview shows the PDF version of this report.</span>' +
-					'<a class="doc-preview__tab" target="_blank" rel="noopener">Open in new tab</a>' +
+					'<span class="doc-preview__note">Preview shows the PDF version of this report.</span>' +
+					'<a class="doc-preview__doc" download><i class="fas fa-file-word"></i>Download Word file</a>' +
+					'<a class="doc-preview__tab" target="_blank" rel="noopener">Open PDF in new tab</a>' +
 				'</div>' +
 			'</div>';
 		document.body.appendChild(overlay);
@@ -33,6 +39,7 @@
 		frame = overlay.querySelector('.doc-preview__frame');
 		titleEl = overlay.querySelector('.doc-preview__title');
 		tabLink = overlay.querySelector('.doc-preview__tab');
+		docLink = overlay.querySelector('.doc-preview__doc');
 
 		overlay.querySelector('.doc-preview__close').addEventListener('click', close);
 		overlay.addEventListener('click', function (e) {
@@ -40,13 +47,21 @@
 		});
 	}
 
-	function open(pdf, title) {
+	function open(pdf, title, doc) {
 		if (!overlay) build();
 
 		var src = encodeURI(pdf);
 		titleEl.textContent = title || 'Report preview';
 		frame.src = src;
 		tabLink.href = src;
+
+		if (doc) {
+			docLink.href = encodeURI(doc);
+			docLink.style.display = '';
+		} else {
+			docLink.removeAttribute('href');
+			docLink.style.display = 'none';
+		}
 
 		lastFocused = document.activeElement;
 		overlay.classList.add('is-open');
@@ -67,8 +82,11 @@
 		var trigger = e.target.closest ? e.target.closest('[data-preview-pdf]') : null;
 		if (!trigger) return;
 
+		var href = trigger.getAttribute('href') || '';
+		var doc = /\.docx?$/i.test(href) ? href : null;
+
 		e.preventDefault();
-		open(trigger.getAttribute('data-preview-pdf'), trigger.getAttribute('data-preview-title'));
+		open(trigger.getAttribute('data-preview-pdf'), trigger.getAttribute('data-preview-title'), doc);
 	});
 
 	document.addEventListener('keydown', function (e) {

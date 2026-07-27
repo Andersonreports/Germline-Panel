@@ -463,7 +463,8 @@ tbody tr:hover {
 	background: rgba(0, 64, 128, 0.06);
 }
 
-/* Editable Word copy of a report, alongside its read-only PDF. */
+/* Editable Word copy of a report, alongside its read-only PDF. Clicking it
+   opens the preview overlay, which offers the download. */
 .condition-btn-grid a.condition-btn--doc {
 	background: #ffffff;
 	color: var(--orange-dark, #e67700) !important;
@@ -472,6 +473,16 @@ tbody tr:hover {
 
 .condition-btn-grid a.condition-btn--doc:hover {
 	background: rgba(255, 136, 0, 0.08);
+}
+
+.condition-btn-grid a.condition-btn--doc i {
+	margin-right: 0.5em;
+}
+
+/* A card may stack more than one grid when its report versions come in
+   different shapes (logo pairs vs PDF/Word pairs). */
+.condition-card__body .condition-btn-grid + .condition-btn-grid {
+	margin-top: 0.75em;
 }
 
 /* Cards that offer PDF + Word + Preview for each report version. */
@@ -595,10 +606,27 @@ body.doc-preview-open {
 	font-size: 0.85em;
 }
 
-.doc-preview__tab {
+.doc-preview__doc {
 	margin-left: auto;
+	color: var(--orange-dark, #e67700) !important;
+	font-weight: bold;
+}
+
+.doc-preview__doc i {
+	margin-right: 0.4em;
+}
+
+.doc-preview__tab {
 	color: var(--navy) !important;
 	font-weight: bold;
+}
+
+.doc-preview__doc + .doc-preview__tab {
+	margin-left: 0;
+}
+
+.doc-preview__note {
+	flex: 1 1 12em;
 }
 
 @media screen and (max-width: 700px) {
