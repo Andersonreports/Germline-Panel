@@ -62,11 +62,15 @@ a { color: var(--navy); }
 	gap: 2.5em;
 }
 
-.site-nav__brand {
+/* main.css gives every <a> a dotted bottom border; the brand is a logo, not
+   a body link, so clear it here (and on hover). */
+.site-nav__brand,
+.site-nav__brand:hover {
 	display: flex;
 	align-items: center;
 	gap: 0.6em;
 	text-decoration: none;
+	border-bottom: 0 !important;
 	margin-right: auto;
 }
 
@@ -1018,6 +1022,57 @@ a { color: var(--navy); }
 /* ---------------------------------------------------------------------
    Get in touch dialog (assets/js/contact-modal.js)
    --------------------------------------------------------------------- */
+
+/* Floating button, injected by the same script; sits above the page in the
+   bottom-right corner and opens the dialog. */
+.contact-fab {
+	position: fixed;
+	right: 1.5em;
+	bottom: 1.5em;
+	z-index: 1500;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6em;
+	background: var(--orange) !important;
+	border: 0 !important;
+	border-radius: 999px !important;
+	color: #ffffff !important;
+	font-weight: bold;
+	font-size: 0.85em;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	line-height: 1 !important;
+	height: auto !important;
+	padding: 1.1em 1.6em !important;
+	box-shadow: 0 10px 26px rgba(0, 20, 45, 0.28) !important;
+	cursor: pointer;
+	transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-fab:hover {
+	background: var(--orange-dark) !important;
+	transform: translateY(-2px);
+}
+
+.contact-fab i {
+	font-size: 1.15em;
+}
+
+body.contact-modal-open .contact-fab {
+	display: none;
+}
+
+@media screen and (max-width: 700px) {
+	.contact-fab {
+		right: 1em;
+		bottom: 1em;
+		padding: 1.1em !important;
+	}
+
+	.contact-fab span {
+		display: none;
+	}
+}
 
 .contact-modal {
 	display: none;

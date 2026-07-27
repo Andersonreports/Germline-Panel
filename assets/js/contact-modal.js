@@ -103,6 +103,20 @@
 		if (lastFocused && lastFocused.focus) lastFocused.focus();
 	}
 
+	/* Floating action button, injected so no page markup has to carry it.
+	   It shares the [data-contact-modal] contract with the nav CTA. */
+	function addFloatingButton() {
+		if (document.querySelector('.contact-fab')) return;
+
+		var fab = document.createElement('button');
+		fab.type = 'button';
+		fab.className = 'contact-fab';
+		fab.setAttribute('data-contact-modal', '');
+		fab.setAttribute('aria-label', 'Get in touch');
+		fab.innerHTML = '<i class="fas fa-envelope"></i><span>Get in touch</span>';
+		document.body.appendChild(fab);
+	}
+
 	document.addEventListener('click', function (e) {
 		var trigger = e.target.closest ? e.target.closest('[data-contact-modal]') : null;
 		if (!trigger) return;
@@ -114,5 +128,8 @@
 	document.addEventListener('keydown', function (e) {
 		if (e.key === 'Escape' || e.keyCode === 27) close();
 	});
+
+	if (document.body) addFloatingButton();
+	else document.addEventListener('DOMContentLoaded', addFloatingButton);
 
 })();
