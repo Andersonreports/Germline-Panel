@@ -463,6 +463,17 @@ tbody tr:hover {
 	background: rgba(0, 64, 128, 0.06);
 }
 
+/* Editable Word copy of a report, alongside its read-only PDF. */
+.condition-btn-grid a.condition-btn--doc {
+	background: #ffffff;
+	color: var(--orange-dark, #e67700) !important;
+	border: 2px solid var(--orange, #ff8800);
+}
+
+.condition-btn-grid a.condition-btn--doc:hover {
+	background: rgba(255, 136, 0, 0.08);
+}
+
 @media screen and (max-width: 700px) {
 	.condition-btn-grid {
 		grid-template-columns: 1fr;
