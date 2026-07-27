@@ -29,6 +29,17 @@ h1, h2, h3 { color: var(--navy); }
 p { color: var(--text-muted); }
 a { color: var(--navy); }
 
+/* main.css centres section content only on pages that have a #header, and
+   these pages use .site-nav instead, so every section was pinned to the left
+   with dead space on the right. Widen to the nav's 90em too, so the card
+   grids use the space instead of leaving a blank right margin. */
+#wrapper > .wrapper > .inner {
+	width: 100%;
+	max-width: 90em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /* ---------------------------------------------------------------------
    Top nav (index.html and panelss.html)
    --------------------------------------------------------------------- */
@@ -427,9 +438,13 @@ a { color: var(--navy); }
 	color: var(--text) !important;
 }
 
+/* Columns are capped rather than 1fr so a row that does not fill the grid
+   (index.html has two cards, panelss.html three) stays centred instead of
+   hugging the left edge with a gap on the right. */
 .panel-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(320px, 560px));
+	justify-content: center;
 	align-items: stretch;
 	gap: 2em;
 	margin-top: 1em;
