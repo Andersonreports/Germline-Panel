@@ -574,12 +574,14 @@ body.doc-preview-open {
 }
 
 .doc-preview__close {
-	background: transparent;
-	border: 0;
-	color: #ffffff;
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	color: #ffffff !important;
 	font-size: 1.1em;
-	line-height: 1;
-	padding: 0.3em 0.5em;
+	line-height: 1 !important;
+	height: auto !important;
+	padding: 0.3em 0.5em !important;
 	cursor: pointer;
 	border-radius: 6px;
 }

@@ -33,13 +33,24 @@ a { color: var(--navy); }
    Top nav (index.html and panelss.html)
    --------------------------------------------------------------------- */
 
+/* The bar rides over the hero photo with no background of its own; once the
+   page scrolls past the hero, assets/js/site-nav.js adds .is-solid so the
+   links stay readable against the white content below. */
 .site-nav {
-	position: sticky;
+	position: fixed;
 	top: 0;
+	left: 0;
+	right: 0;
 	z-index: 1000;
-	background: #ffffff;
-	border-bottom: 1px solid var(--border);
-	box-shadow: 0 2px 12px rgba(0, 64, 128, 0.06);
+	background: transparent;
+	border-bottom: 1px solid transparent;
+	transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.site-nav.is-solid {
+	background: var(--navy-dark);
+	border-bottom-color: rgba(255, 255, 255, 0.12);
+	box-shadow: 0 2px 16px rgba(0, 20, 45, 0.25);
 }
 
 .site-nav__inner {
@@ -63,13 +74,17 @@ a { color: var(--navy); }
 	width: 2.2em;
 	height: 2.2em;
 	object-fit: contain;
+	background: #ffffff;
+	border-radius: 6px;
+	padding: 0.15em;
 }
 
 .site-nav__brand span {
-	color: var(--navy);
+	color: #ffffff;
 	font-weight: 900;
 	line-height: 1.15;
 	font-size: 0.95em;
+	text-shadow: 0 1px 8px rgba(0, 20, 45, 0.45);
 }
 
 .site-nav__links {
@@ -79,17 +94,18 @@ a { color: var(--navy); }
 }
 
 .site-nav__links a {
-	color: var(--text);
+	color: #ffffff;
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 0.92em;
 	padding-bottom: 0.3em;
 	border-bottom: 2px solid transparent;
+	text-shadow: 0 1px 8px rgba(0, 20, 45, 0.45);
 	transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .site-nav__links a:hover {
-	color: var(--navy);
+	color: #ffffff;
 	border-bottom-color: var(--orange);
 }
 
@@ -238,15 +254,16 @@ a { color: var(--navy); }
    repo (and no way to source a stock one here), so the backdrop is an
    abstract navy gradient + pattern standing in for a lab photo rather
    than a literal (and potentially misleading) photograph. */
+/* Top padding clears the transparent nav bar that sits over this hero. */
 #intro.hero--photo {
 	background: url('../../images/screen.png') center 30% / cover no-repeat !important;
 	position: relative;
 	overflow: hidden;
-	min-height: 30em;
+	min-height: 34em;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 4em 2em;
+	padding: 9em 2em 5em 2em;
 }
 
 #intro.hero--photo:before,
@@ -328,7 +345,7 @@ a { color: var(--navy); }
 @media screen and (max-width: 700px) {
 	#intro.hero--photo {
 		min-height: 0;
-		padding: 3em 1.5em;
+		padding: 7em 1.5em 3em 1.5em;
 	}
 }
 
@@ -890,18 +907,27 @@ a { color: var(--navy); }
 	color: rgba(255, 255, 255, 0.75) !important;
 }
 
+/* main.css only centres the footer inner on pages that have a #header, and
+   these pages use .site-nav instead, so centre it here. */
+.site-footer > .inner {
+	max-width: 90em;
+	margin: 0 auto;
+	width: 100%;
+}
+
 .site-footer__grid {
 	display: grid;
-	grid-template-columns: 1.3fr 1fr auto;
+	grid-template-columns: minmax(18em, 26em) auto;
+	justify-content: space-between;
 	gap: 3em;
 	align-items: start;
-	padding-top: 1em;
-	padding-bottom: 1em;
+	padding-top: 1.5em;
+	padding-bottom: 0.5em;
 }
 
 .site-footer__brand {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	gap: 0.8em;
 }
 
@@ -948,9 +974,31 @@ a { color: var(--navy); }
 	color: #ffffff;
 }
 
-.site-footer__legal {
-	text-align: right;
+/* Legal sits as its own bar across the bottom, under a hairline rule, rather
+   than as a third column stranded at the top right. */
+.site-footer .site-footer__legal {
+	grid-column: 1 / -1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0.6em 2em;
+	margin: 1.5em 0 0 0;
+	padding-top: 1.25em;
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
 	font-size: 0.85em;
+	text-align: left;
+}
+
+.site-footer .site-footer__legal > li {
+	border-left: 0;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+	display: block;
+}
+
+.site-footer__brand p {
+	line-height: 1.5;
 }
 
 @media screen and (max-width: 800px) {
@@ -959,9 +1007,157 @@ a { color: var(--navy); }
 		text-align: left;
 	}
 
-	.site-footer__legal {
-		text-align: left;
+	.site-footer .site-footer__legal {
+		justify-content: flex-start;
+		flex-direction: column;
 	}
 }
 
 #footer a:hover { color: #ffffff !important; }
+
+/* ---------------------------------------------------------------------
+   Get in touch dialog (assets/js/contact-modal.js)
+   --------------------------------------------------------------------- */
+
+.contact-modal {
+	display: none;
+	position: fixed;
+	inset: 0;
+	z-index: 2000;
+	background: rgba(0, 20, 45, 0.72);
+	padding: 2em 1.5em;
+	overflow-y: auto;
+}
+
+.contact-modal.is-open {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+body.contact-modal-open {
+	overflow: hidden;
+}
+
+.contact-modal__panel {
+	background: #ffffff;
+	border-radius: var(--radius);
+	box-shadow: 0 24px 60px rgba(0, 20, 45, 0.4);
+	width: 100%;
+	max-width: 32em;
+	margin: auto;
+	overflow: hidden;
+}
+
+.contact-modal__bar {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	padding: 1em 1.25em;
+	background: var(--navy);
+}
+
+.contact-modal__title {
+	color: #ffffff;
+	font-weight: 900;
+	margin-right: auto;
+}
+
+.contact-modal__close {
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	color: #ffffff !important;
+	font-size: 1.1em;
+	line-height: 1 !important;
+	height: auto !important;
+	padding: 0.3em 0.5em !important;
+	cursor: pointer;
+	border-radius: 6px;
+}
+
+.contact-modal__close:hover {
+	background: rgba(255, 255, 255, 0.16);
+}
+
+.contact-modal__form {
+	padding: 1.5em 1.5em 1.25em 1.5em;
+	margin: 0;
+}
+
+.contact-modal__intro {
+	color: var(--text-muted);
+	margin-bottom: 1.25em;
+}
+
+.contact-modal__form label {
+	display: block;
+	color: var(--navy);
+	font-weight: bold;
+	font-size: 0.85em;
+	margin-bottom: 0.4em;
+}
+
+.contact-modal__form input,
+.contact-modal__form textarea {
+	width: 100%;
+	background: var(--bg-alt);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	color: var(--text);
+	padding: 0.7em 0.85em;
+	margin-bottom: 1em;
+}
+
+.contact-modal__form input:focus,
+.contact-modal__form textarea:focus {
+	background: #ffffff;
+	border-color: var(--navy);
+	outline: none;
+}
+
+.contact-modal__form textarea {
+	resize: vertical;
+}
+
+.contact-modal__send {
+	width: 100%;
+	background: var(--orange);
+	border: 2px solid var(--orange);
+	border-radius: 999px;
+	color: #ffffff;
+	font-weight: bold;
+	letter-spacing: 0.04em;
+	padding: 0.9em 1.5em;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.contact-modal__send:hover {
+	background: var(--orange-dark);
+	border-color: var(--orange-dark);
+}
+
+.contact-modal__status {
+	font-size: 0.85em;
+	font-weight: bold;
+	margin-bottom: 0.75em;
+}
+
+.contact-modal__status:empty {
+	display: none;
+}
+
+.contact-modal__status.is-error {
+	color: #c0392b;
+}
+
+.contact-modal__status.is-ok {
+	color: var(--navy);
+}
+
+.contact-modal__note {
+	color: var(--text-muted);
+	font-size: 0.8em;
+	margin: 1em 0 0 0;
+}
