@@ -9,6 +9,14 @@
 
 	var hero = document.querySelector('.hero--photo');
 
+	/* Pages with no photo hero (panels.html, metagenomics.html, brochures.html)
+	   have nothing transparent for the nav to sit over, so keep it solid from
+	   the start instead of running the scroll-based toggle below. */
+	if (!hero) {
+		nav.classList.add('is-solid');
+		return;
+	}
+
 	function threshold() {
 		/* Switch as the bottom of the bar leaves the hero. */
 		var heroHeight = hero ? hero.offsetHeight : 320;

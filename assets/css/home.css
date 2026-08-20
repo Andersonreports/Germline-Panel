@@ -365,6 +365,40 @@ a { color: var(--navy); }
 }
 
 /* ---------------------------------------------------------------------
+   Landing page (index.html): hero fills the viewport and nothing below
+   it scrolls into view — Panels / Metagenomics / Brochures / Contact all
+   live on their own pages now, reached via the nav.
+   --------------------------------------------------------------------- */
+
+html.landing-hero,
+body.landing-hero {
+	height: 100%;
+	overflow: hidden;
+}
+
+body.landing-hero #wrapper,
+body.landing-hero #intro.hero--photo {
+	height: 100%;
+	min-height: 100%;
+}
+
+/* ---------------------------------------------------------------------
+   Stand-alone sub-pages (panels.html, metagenomics.html, brochures.html):
+   no hero above them to clear the fixed nav, so give the first section
+   extra top padding instead of the default .wrapper > .inner spacing.
+   --------------------------------------------------------------------- */
+
+.subpage-first > .inner {
+	padding-top: 8em;
+}
+
+@media screen and (max-width: 700px) {
+	.subpage-first > .inner {
+		padding-top: 6em;
+	}
+}
+
+/* ---------------------------------------------------------------------
    Spotlight sections
    --------------------------------------------------------------------- */
 
