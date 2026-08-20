@@ -69,8 +69,36 @@
                 white-space: nowrap;
             }
         }
-        
- 
+
+        .pdf-download-btn {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .pdf-download-btn:hover {
+            background-color: #e69100;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            header, footer, nav, .no-print {
+                display: none !important;
+            }
+            .image.logo {
+                display: none !important;
+            }
+        }
+
            </style>
 	    <link rel="stylesheet" href="assets/css/site-theme.css" />
 </head>
@@ -100,6 +128,9 @@
                                                         	<img src="images/pic1.png" alt="Logo" />
 							</div>
 							<h2>Table for disease and gene associated with Ear</h2>
+                                                        <div class="no-print">
+                                                            <button class="pdf-download-btn" onclick="window.print()">Download PDF</button>
+                                                        </div>
                                                       <!-- Table -->
             <table>
                 <thead>
@@ -419,6 +450,13 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				if (new URLSearchParams(window.location.search).get('print') === '1') {
+					window.addEventListener('load', function () {
+						setTimeout(function () { window.print(); }, 400);
+					});
+				}
+			</script>
 
 	</body>
 </html>

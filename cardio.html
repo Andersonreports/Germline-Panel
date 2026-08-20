@@ -69,8 +69,36 @@
                 white-space: nowrap;
             }
         }
-        
- 
+
+        .pdf-download-btn {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .pdf-download-btn:hover {
+            background-color: #e69100;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            header, footer, nav, .no-print {
+                display: none !important;
+            }
+            .image.logo {
+                display: none !important;
+            }
+        }
+
            </style>
 	    <link rel="stylesheet" href="assets/css/site-theme.css" />
 </head>
@@ -100,6 +128,9 @@
                                                         	<img src="images/pic1.png" alt="Logo" />
 							</div>
 							<h2>Table for disease and gene associated with Cardio</h2>
+                                                        <div class="no-print">
+                                                            <button class="pdf-download-btn" onclick="window.print()">Download PDF</button>
+                                                        </div>
                                                       <!-- Table -->
             <table>
                 <thead>
@@ -419,7 +450,7 @@
             <td>Exome sequencing</td>
         </tr>
     </tbody>
-    tbody>
+    <tbody>
         <tr>
             <td>Stroke from paper(302 genes)</td>
             <td>ABCA1, ABCC6, ABCG5, ABCG8, ACAD9, ACP5, ACTA2, ACTB, ACTC1, ACTG1, ACVRL1, ADA2, ADAMTS13, ADIPOQ, AGXT, AKT1, ALOX5AP, ANGPTL6, APC, APOA1, APOB, APP, ASS1, ATP7A, ATP7B, B3GALT6, B4GALT1, BAP1, BAZ1B, BMPR1A, BRCA1, BRCA2, BRCC3, C1R, CACNA1A, CACNA1S, CALR, CBS, CCM2, CD46, CD59, CDK18, CFH, CFI, CITED2, CLIP2, COG6, COL1A1, COL3A1, COL4A2, COL5A1, COL5A2, COLGALT1, COQ8A, CPS1, CPT2, CRELD1, CST3, CTSA, CUL3, CYP11B1, DIAPH1, DLD, DLST, DNMT3A, DPM1, DPM3, DSC2, DSG2, DSP, DYRK1B, EFEMP2, ELN, ENG, ENPP1, EPAS1, EPOR, ERCC6, ERCC8, ESCO2, F10, F13A1, F13B, F2, F5, F7, F8A1, F9, FBLN5, FBN1, FCGR2C, FERMT3, FGA, FGB, FGG, FH, FLNA, FLNC, FN1, FOXC1, FOXE3, GAA, GATA3, GATA4, GATA6, GCDH, GDF2, GFI1B, GGCX, GLA, GNAQ, GP1BA, GPR143, GTF2I, GTF2IRD1, GUCY1A1, GYS1, HBB, HCFC2, HELLPAR, HSD11B2, HTRA1, IL1RN, ISCU, ITM2B, IVD, JAG1, JAK2, JAM3, KCNA5, KCNE2, KCNH2, KCNJ2, KCNQ1, KIF1B, KIF20A, KLHL3, KNG1, KRAS, KRIT1, LDLR, LIMK1, LMNA, LOX, LYL1, MAT2A, MAX, MBTPS2, MDH2, MECP2, MEN1, MFAP5, MFN2, MGAT2, MLH1, MLXIPL, MMACHC, MMUT, MPI, MPL, MSH2, MSH6, MTHFR, MUTYH, MYBPC3, MYD88, MYH11, MYH6, MYH7, MYH9, MYL2, MYL3, MYLK, MYPN, NAGS, NBEAL2, NCF1, NDE1, NDUFA8, NF1, NF2, NKX2-5, NOS3, NOTCH1, NOTCH3, NPPA, NR3C1, NR3C2, NUP155, OTC, PCCA, PCCB, PCNT, PCSK9, PDCD10, PDE3A, PDE4D, PDGFB, PGM1, PHACTR1, PIGA, PIK3C2A, PIK3CA, PKD1, PKP2, PLG, PLOD1, PLOD3, PMM2, PMS2, PNP, PRKAG2, PRKCH, PRKG1, PRNP, PROC, PROS1, PTEN, PTPN11, RASA1, RASGRP2, RB1, RET, RFC2, RFT1, RNF213, SAG, SAMHD1, SCN1B, SCN2B, SCN3B, SCN4B, SCN5A, SCNN1B, SCNN1G, SDHA, SDHAF2, SDHB, SDHC, SDHD, SERPINC1, SERPINE1, SH2B3, SLC19A2, SLC25A11, SLC2A10, SMAD3, SMAD4, SMAD9, SMARCAL1, SMARCB1, SMARCE1, SMO, SNAP29, SON, SPARC, STAT1, STAT2, STIM1, STK11, STX1A, SUFU, TANGO2, TBL2, TBX20, TENT5A, TERT, TET2, TGFB2, TGFB3, TGFBR1, TGFBR2, TGFBR3, THBD, THPO, THSD1, TLL1, TMEM127, TMEM43, TNNI3, TNNT2, TNXB, TP53, TPM1, TPP2, TRAF7, TREM2, TREX1, TSC1, TSC2, TTR, USP18, VHL, VPS52, VWF, WFS1, WT1, XYLT1, XYLT2, YY1AP1, ZAP70, ZMPSTE24</td>
@@ -496,6 +527,13 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				if (new URLSearchParams(window.location.search).get('print') === '1') {
+					window.addEventListener('load', function () {
+						setTimeout(function () { window.print(); }, 400);
+					});
+				}
+			</script>
 
 	</body>
 </html>

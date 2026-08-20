@@ -19,11 +19,32 @@
                gap: 16px;
                }
 
-              .content .image-grid img 
+              .content .image-grid img
               {
        	      width: 250px; /* Adjust as needed */
               object-fit: cover; /* Ensure images don't exceed container width */
               height: 250px; /* Maintain aspect ratio */
+              }
+
+              .content .image-grid .grid-item {
+                  position: relative;
+              }
+
+              .content .image-grid .pdf-badge {
+                  position: absolute;
+                  bottom: 8px;
+                  right: 8px;
+                  background-color: orange;
+                  color: white;
+                  font-size: 12px;
+                  font-weight: bold;
+                  padding: 4px 8px;
+                  border-radius: 4px;
+                  text-decoration: none;
+                  z-index: 2;
+              }
+              .content .image-grid .pdf-badge:hover {
+                  background-color: #e69100;
               }
            </style>
 	    <link rel="stylesheet" href="assets/css/site-theme.css" />
@@ -82,8 +103,8 @@
 								  <a href="reproductive.html"><img src="images/pic12.png" alt="" /></a>
 								  <a href="endocrinology.html"><img src="images/pic13.png" alt="" /></a>
 	       						  <a href="liver.html"><img src="images/pic14.png" alt="" /></a>
-	       					         <a href="hearing.html"><img src="images/pic4.png" alt="" /></a>
-	       						 <a href="cardio.html"><img src="images/pic16.png" alt="" /></a>
+	       					         <div class="grid-item"><a href="hearing.html"><img src="images/pic4.png" alt="" /></a><a class="pdf-badge" href="hearing.html?print=1" title="Download Ear panel as PDF">PDF</a></div>
+	       						 <div class="grid-item"><a href="cardio.html"><img src="images/pic16.png" alt="" /></a><a class="pdf-badge" href="cardio.html?print=1" title="Download Heart panel as PDF">PDF</a></div>
 							 <a href="mito.html"><img src="images/mito.jpeg" alt="" /></a>
 						         <a href="https://docs.google.com/spreadsheets/d/1x4UjREOcl_yoqXymY0qa9SGReYtUH615ghjsfQGxlps/edit?usp=sharing"><img src="images/exome_genelist_image.JPG" alt="" /></a>
 						          <a href="PHARMA.html"><img src="images/PHARMA.png" alt="" /></a>
