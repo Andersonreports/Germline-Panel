@@ -406,6 +406,20 @@ tbody tr:hover {
 	letter-spacing: 0.04em;
 }
 
+.new-tag {
+	display: inline-block;
+	margin-left: 0.6em;
+	padding: 0.15em 0.55em;
+	border-radius: 999px;
+	background: var(--orange);
+	color: #ffffff;
+	font-size: 0.65em;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+
 .condition-card__chevron {
 	flex: none;
 	color: var(--text-muted);
